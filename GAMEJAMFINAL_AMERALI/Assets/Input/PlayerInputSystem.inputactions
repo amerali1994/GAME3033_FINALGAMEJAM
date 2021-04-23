@@ -6,14 +6,6 @@
             "id": "e50b46c8-eb43-4a9a-b187-f51dffa8fe7b",
             "actions": [
                 {
-                    "name": "Movement",
-                    "type": "Value",
-                    "id": "66623bd8-8882-4e58-b717-b5badf8875f2",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "34db1618-d9b8-4bc3-b60f-343ed015090d",
@@ -28,13 +20,29 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Movement",
+                    "type": "PassThrough",
+                    "id": "0bbd7a2c-ea60-4f32-973a-5c6efa7d16e8",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Camera",
+                    "type": "PassThrough",
+                    "id": "86ecf589-f16c-4460-888b-a75bb3c50ede",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
-                    "id": "8ce61672-4d25-4ca7-b8ac-526e584950ab",
-                    "path": "2DVector",
+                    "name": "WASD",
+                    "id": "dd4a7c3e-3533-4942-9ef0-cf41330412c0",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -44,50 +52,78 @@
                 },
                 {
                     "name": "up",
-                    "id": "15e77408-d49d-4b91-b4a2-3835bd19c3a8",
+                    "id": "20f5af63-7673-4d20-a128-b909f5cbd4b5",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": " control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "0cb7eee0-43cb-4d4b-b8f9-e420a93f941c",
+                    "id": "d66ba5c2-a5d6-4e3c-a831-00a1c26a5260",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": " control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "c50c421a-42f7-4930-8899-35e84f352283",
+                    "id": "87ed77f5-f255-4f12-b9c9-7c9054327c14",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": " control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "c69d3872-ee5b-48ef-bb56-bf6ed6e2bf92",
+                    "id": "ff9c96cc-19d7-4e2a-b415-3bd3bd28780d",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": " control scheme",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2d0bf6c9-e807-401a-8534-bae10d7ef6ff",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": " control scheme",
+            "bindingGroup": " control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
