@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PlayerAttacker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AnimationManager animator;
+
+    private void Awake()
     {
-        
+        animator = GetComponentInChildren<AnimationManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HandleLightAttack(WeaponItem weapon)
     {
-        
+        animator.PlayTargetAnimation(weapon.Light_Attack, true);
+    }
+
+    public void HandleHeavyAttack(WeaponItem weapon)
+    {
+        animator.PlayTargetAnimation(weapon.Heavy_Attack, true);
+
     }
 }

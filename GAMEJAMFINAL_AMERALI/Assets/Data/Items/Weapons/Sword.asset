@@ -16,3 +16,5 @@ MonoBehaviour:
   itemName: 
   modelPrefab: {fileID: 5096797749881093665, guid: c7349441bb611af45ad4757004d4542b, type: 3}
   isUnarmed: 0
+  Light_Attack: WK_Light_infantry_08_attack_B 0
+  Heavy_Attack: WK_heavy_infantry_08_attack_B 1

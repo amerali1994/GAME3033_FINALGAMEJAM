@@ -14,9 +14,10 @@ public class PlayerManager : MonoBehaviour
         playerController = GetComponent<PlayerController>();
     }
 
-    private void Update()
+    void Update()
     {
-        inputManager.HandleAllInputs();
+        float delta = Time.deltaTime;
+        inputManager.HandleAllInputs(delta);
     }
 
     private void FixedUpdate()
@@ -26,6 +27,9 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
+        inputManager.LightAttackPerformed = false;
+        inputManager.HeavyAttackPerformed = false;
+
         cameraManager.HandleAllCameraMovement();
     }
 }

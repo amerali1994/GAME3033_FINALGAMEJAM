@@ -6,6 +6,9 @@ public class InputManager : MonoBehaviour
 {
     PlayerInputSystem playerControls;
     AnimationManager animatorManager;
+    PlayerAttacker playerAttacker;
+    PlayerInventory playerInventory;
+
     [SerializeField]
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -16,6 +19,9 @@ public class InputManager : MonoBehaviour
     public float verticalInput;
     public float horizontalInput;
 
+    public bool LightAttackPerformed;
+    public bool HeavyAttackPerformed;
+
     private float MoveAmount;
 
     
@@ -23,6 +29,8 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         animatorManager = GetComponent<AnimationManager>();
+        playerAttacker = GetComponent<PlayerAttacker>();
+        playerInventory = GetComponent<PlayerInventory>();
     }
     private void OnEnable()
     {
@@ -43,12 +51,13 @@ public class InputManager : MonoBehaviour
         playerControls.Disable();
     }
 
-    public void HandleAllInputs()
+    public void HandleAllInputs(float delta)
     {
-        HandleMovementInput();
+        HandleMovementInput(delta);
+        AttackInput(delta);
     }
 
-    private void HandleMovementInput()
+    private void HandleMovementInput(float delta)
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
@@ -59,5 +68,20 @@ public class InputManager : MonoBehaviour
 
         MoveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
         animatorManager.UpdateAnimatorValues(0, MoveAmount);
+    }
+
+    private void AttackInput(float delta)
+    {
+        playerControls.Player.LightAttack.performed += i => LightAttackPerformed = true;
+        playerControls.Player.HeavyAttack.performed += i => HeavyAttackPerformed = true;
+
+        if(LightAttackPerformed)
+        {
+            playerAttacker.HandleLightAttack(playerInventory.rightHandweapon);
+        }
+        if (HeavyAttackPerformed)
+        {
+            playerAttacker.HandleHeavyAttack(playerInventory.rightHandweapon);
+        }
     }
 }

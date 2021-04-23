@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     int horizontal;
     int vertical;
     public bool isAttacking;
@@ -68,5 +68,12 @@ public class AnimationManager : MonoBehaviour
         #endregion
         animator.SetFloat(horizontal, snappedHorizontal, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, snappedVertical, 0.1f, Time.deltaTime);
+    }
+
+    public void PlayTargetAnimation(string targetAnim, bool IsAttacking )
+    {
+        animator.applyRootMotion = IsAttacking;
+        animator.SetBool("isAttacking", IsAttacking);
+        animator.CrossFade(targetAnim, 0.2f);
     }
 }
