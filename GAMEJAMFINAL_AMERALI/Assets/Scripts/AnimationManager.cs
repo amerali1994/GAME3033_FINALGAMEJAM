@@ -7,12 +7,14 @@ public class AnimationManager : MonoBehaviour
     Animator animator;
     int horizontal;
     int vertical;
+    public bool isAttacking;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         horizontal = Animator.StringToHash("Horizontal");
         vertical = Animator.StringToHash("Vertical");
+        
 
     }
 

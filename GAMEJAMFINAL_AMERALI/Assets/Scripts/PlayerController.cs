@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
         playerRigidBody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
     }
-    public void HandleAllMoveent()
+    public void HandleAllMovement()
     {
         HandleMovement();
         HandleRotation();

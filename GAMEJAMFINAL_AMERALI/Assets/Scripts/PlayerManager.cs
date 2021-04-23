@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerController.HandleAllMoveent();
+        playerController.HandleAllMovement();
     }
 
     private void LateUpdate()

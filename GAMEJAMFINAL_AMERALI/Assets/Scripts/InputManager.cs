@@ -18,6 +18,8 @@ public class InputManager : MonoBehaviour
 
     private float MoveAmount;
 
+    
+
     private void Awake()
     {
         animatorManager = GetComponent<AnimationManager>();
