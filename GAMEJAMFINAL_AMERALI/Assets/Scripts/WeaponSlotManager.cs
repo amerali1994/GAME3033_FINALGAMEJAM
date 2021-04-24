@@ -6,7 +6,8 @@ public class WeaponSlotManager : MonoBehaviour
 {
     WeaponHolderSlot lefthandSlot;
     WeaponHolderSlot righthandSlot;
-         
+
+    DamageCollider rightHandGamageCollider;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class WeaponSlotManager : MonoBehaviour
         if(isRight)
         {
             righthandSlot.LoadWeaponModel(weaponItem);
+            LoadRightHandWeaponDamageCollider();
         }
 
         else
@@ -37,5 +39,21 @@ public class WeaponSlotManager : MonoBehaviour
             
         }
 
+    }
+
+    private void LoadRightHandWeaponDamageCollider()
+    {
+        rightHandGamageCollider = righthandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+
+    }
+
+    public void OpenRightDamageCollider()
+    {
+        rightHandGamageCollider.EnableDamageCollider();
+    }
+
+    public void CloseRightDamageCollider()
+    {
+        rightHandGamageCollider.DisableDamageCollider();
     }
 }

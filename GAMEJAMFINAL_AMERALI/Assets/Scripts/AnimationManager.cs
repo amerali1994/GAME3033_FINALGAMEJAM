@@ -73,7 +73,7 @@ public class AnimationManager : MonoBehaviour
     public void PlayTargetAnimation(string targetAnim, bool IsAttacking )
     {
         animator.applyRootMotion = IsAttacking;
-        animator.SetBool("isAttacking", IsAttacking);
+        animator.SetBool("IsAttacking", IsAttacking);
         animator.CrossFade(targetAnim, 0.2f);
     }
 }

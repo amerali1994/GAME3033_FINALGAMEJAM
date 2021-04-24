@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 7361748682094581375}
   - component: {fileID: 7361748682093614271}
   - component: {fileID: 3533417343608941696}
+  - component: {fileID: 3368224556448002120}
+  - component: {fileID: 3041967622968046828}
   m_Layer: 0
   m_Name: PP_Sword_1039
   m_TagString: Untagged
@@ -158,3 +160,28 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5dcae31d8c9fdea4c8ae0649cb922f4c, type: 3}
+--- !u!65 &3368224556448002120
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361748682091350655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.389164, y: 1.599078, z: 0.092281915}
+  m_Center: {x: 0.00015076289, y: 0.46117947, z: 0.00014761796}
+--- !u!114 &3041967622968046828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361748682091350655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2b89d5f7c83d041b6962c21d420db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
