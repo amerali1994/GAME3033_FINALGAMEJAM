@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 
 public class MainMenu : MonoBehaviour
-{ 
+{
+    public GameObject PauseScreen;
+
     public void ClickedPlayButton()
     {
         SceneManager.LoadScene(1);
@@ -32,4 +34,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void ClickedResume()
+    {
+        PauseScreen.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
 }

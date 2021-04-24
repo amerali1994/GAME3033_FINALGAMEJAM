@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class EnemyStats : CharacterStats
 { 
@@ -34,6 +36,14 @@ public class EnemyStats : CharacterStats
         {
             currentHealth = 0;
             animator.Play("Dying");
+            StartCoroutine(Win());
         }
+    }
+
+    IEnumerator Win()
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        SceneManager.LoadScene(4);
     }
 }

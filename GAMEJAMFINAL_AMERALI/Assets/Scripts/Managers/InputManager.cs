@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     public Vector2 movementInput;
     public Vector2 cameraInput;
+    public GameObject pauseScreen;
 
     public float cameraInputX;
     public float cameraInputY;
@@ -40,10 +43,18 @@ public class InputManager : MonoBehaviour
 
             playerControls.Player.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.Player.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+            playerControls.Player.Pause.performed += PauseGame;
 
         }
 
         playerControls.Enable();
+    }
+
+    private void PauseGame(InputAction.CallbackContext obj)
+    {
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0f;
+       
     }
 
     private void OnDisable()

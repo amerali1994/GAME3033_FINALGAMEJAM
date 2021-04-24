@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
             {
                 if(inAirTimer > 0.5f)
                 {
-                    Debug.Log("YOu were in Air for" + inAirTimer);
+                    
                     animationManager.PlayTargetAnimation("Landing", true);
                     inAirTimer = 0;
                 }

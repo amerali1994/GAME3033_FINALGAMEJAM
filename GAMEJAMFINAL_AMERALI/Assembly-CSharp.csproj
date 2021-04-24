@@ -57,11 +57,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Managers\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Managers\EnemyAnimatorManager.cs" />
     <Compile Include="Assets\Scripts\ResetIsInteracting.cs" />
+    <Compile Include="Assets\Scripts\Managers\AnimatorManager.cs" />
     <Compile Include="Assets\Scripts\Managers\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\PlayerAnimationManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\WeaponSlotManager.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\DamageCollider.cs" />
@@ -75,12 +78,8 @@
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyLocomotionManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\EnemyAnimatorManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\AnimatorManager.cs" />
-    <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
