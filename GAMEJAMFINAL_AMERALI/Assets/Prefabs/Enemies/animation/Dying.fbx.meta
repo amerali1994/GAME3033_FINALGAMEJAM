@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: b5f833b18676689429d3325688f4a6eb
+guid: 8cc0dcebe93b2ff42954869566d270f0
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Landing
+    second: Dying
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -24,7 +24,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 1
+    importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Landing
+      name: Dying
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 32
+      lastFrame: 132
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
