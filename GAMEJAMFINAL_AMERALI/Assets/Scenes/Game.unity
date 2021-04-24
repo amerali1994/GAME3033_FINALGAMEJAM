@@ -1032,6 +1032,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1710802350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1710802353}
+  - component: {fileID: 1710802352}
+  - component: {fileID: 1710802351}
+  m_Layer: 0
+  m_Name: Terrain (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!154 &1710802351
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710802350}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: ff9fae50a2c315e4291bc7102f9968ae, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1710802352
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710802350}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: ff9fae50a2c315e4291bc7102f9968ae, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &1710802353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710802350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809113672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12.599998}
+  m_AnchoredPosition: {x: 0, y: -12.599976}
   m_SizeDelta: {x: 180.5, y: 25.199997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1809113674
@@ -1281,7 +1357,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a95e419303a805946894091dc2d03ed4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1625,6 +1701,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefd2f5560aedae4d98406fd868f04cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 5069772071605215089}
+  isInAir: 0
+  isGrounded: 0
+  isInteracting: 0
 --- !u!1 &5069772071612509377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1741,7 @@ MonoBehaviour:
   horizontalInput: 0
   LightAttackPerformed: 0
   HeavyAttackPerformed: 0
+  MoveAmount: 0
 --- !u!1 &5069772071612509379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1784,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!1 &5069772071612509381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,8 +1936,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02303583089919541af55267072becc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
-  rotatonSpeed: 4
+  moveDirection: {x: 0, y: 0, z: 0}
+  movementSpeed: 15
+  rotatonSpeed: 1
+  groundDetectionRayStartPoint: 0.1
+  minDistanceNeededtoStartFall: 1
+  groundDirectionRayDistance: 0.5
+  fallingSpeed: 100
+  inAirTimer: 0
 --- !u!1 &5069772071612509403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,7 +2121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5069772071612509361}
   m_LocalRotation: {x: -0.50000036, y: 0.49999964, z: 0.49999964, w: 0.50000036}
-  m_LocalPosition: {x: -0.00000001682838, y: 0.73484915, z: -0.049094908}
+  m_LocalPosition: {x: -0, y: 0.75, z: -0.05}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Children:
   - {fileID: 5069772071612936339}
@@ -2170,7 +2257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5069772071612509379}
   m_LocalRotation: {x: 0.00000084590596, y: 0.00008489, z: -0.0000000050391007, w: 1}
-  m_LocalPosition: {x: 2.6240785, y: 0.799, z: 0.60031945}
+  m_LocalPosition: {x: 10.48, y: 20.33, z: 11.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5069772071612936337}

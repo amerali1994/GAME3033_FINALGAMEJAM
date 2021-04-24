@@ -22,7 +22,7 @@ public class InputManager : MonoBehaviour
     public bool LightAttackPerformed;
     public bool HeavyAttackPerformed;
 
-    private float MoveAmount;
+    public float MoveAmount;
 
     
 
